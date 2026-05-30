@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research Through DSRM | MetaProbity</title>
+    <title>Research Through DSRM | Enterprise AI Adoption Research</title>
     <meta
       name="description"
-      content="How Design Science Research Methodology was used to investigate enterprise AI adoption through artefact creation, demonstration, and evaluation."
+      content="How Design Science Research Methodology was used to investigate enterprise AI adoption through a real domain context and two deliberately contrasting built systems."
     />
-    <meta property="og:title" content="Research Through DSRM | MetaProbity" />
+    <meta property="og:title" content="Research Through DSRM | Enterprise AI Adoption Research" />
     <meta
       property="og:description"
-      content="How Design Science Research Methodology was used to investigate enterprise AI adoption through artefact creation, demonstration, and evaluation."
+      content="How Design Science Research Methodology was used to investigate enterprise AI adoption through a real domain context and two deliberately contrasting built systems."
     />
     <meta property="og:image" content="assets/images/site-og-image.jpg" />
     <meta property="og:type" content="website" />
@@ -53,16 +53,267 @@
     </header>
 
     <main id="main-content">
+
       <section class="hero hero-research">
         <div class="container hero-content" style="grid-template-columns: 1fr;">
           <div class="hero-copy reveal">
             <span class="eyebrow">Method and inquiry</span>
             <h1>Research through design science</h1>
             <p>
-              This work used Design Science Research Methodology to investigate the enterprise AI gap through artefact creation, demonstration, and evaluation.
+              This work used Design Science Research Methodology to investigate the enterprise AI gap through problem framing, domain-grounded inquiry, artefact creation, and structured demonstration.
             </p>
             <p class="hero-support">The goal was not only to understand the problem, but to build through it.</p>
           </div>
+          <div class="rp-panel reveal" aria-label="Research path overview" style="margin-top: var(--space-6);">
+            <div class="rp-header">
+              <span class="rp-label">From abstract problem to grounded design</span>
+              <p class="rp-sub">The study moved from enterprise AI tension, into a regulated power transmission context, and then into two contrasting build paths.</p>
+            </div>
+            <ol class="rp-track" role="list">
+              <li class="rp-stage" data-index="0">
+                <span class="rp-num">01</span>
+                <span class="rp-name">Problem</span>
+              </li>
+              <li class="rp-connector" aria-hidden="true"></li>
+              <li class="rp-stage" data-index="1">
+                <span class="rp-num">02</span>
+                <span class="rp-name">Objectives</span>
+              </li>
+              <li class="rp-connector" aria-hidden="true"></li>
+              <li class="rp-stage rp-stage--domain" data-index="2">
+                <span class="rp-num">03</span>
+                <span class="rp-name">Domain</span>
+              </li>
+              <li class="rp-connector" aria-hidden="true"></li>
+              <li class="rp-stage rp-stage--transform" data-index="3">
+                <span class="rp-num">04</span>
+                <span class="rp-name">Transformative system</span>
+              </li>
+              <li class="rp-connector rp-connector--split" aria-hidden="true"></li>
+              <li class="rp-stage rp-stage--govern" data-index="4">
+                <span class="rp-num">05</span>
+                <span class="rp-name">Governed system</span>
+              </li>
+            </ol>
+          </div>
+
+          <style>
+            .rp-panel {
+              border: 1px solid var(--color-border);
+              border-radius: var(--radius-lg);
+              background: linear-gradient(180deg, rgba(22, 22, 42, 0.8), rgba(15, 15, 26, 0.92));
+              padding: var(--space-4) var(--space-5) var(--space-5);
+              box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            }
+
+            .rp-header {
+              margin-bottom: var(--space-4);
+              border-bottom: 1px solid rgba(42, 42, 69, 0.9);
+              padding-bottom: var(--space-3);
+            }
+
+            .rp-label {
+              display: block;
+              font-family: var(--font-heading);
+              font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+              font-weight: 700;
+              color: var(--color-text-primary);
+              margin-bottom: var(--space-1);
+              letter-spacing: -0.01em;
+            }
+
+            .rp-sub {
+              font-size: 0.92rem;
+              color: var(--color-text-muted);
+              max-width: 700px;
+              line-height: 1.6;
+            }
+
+            .rp-track {
+              list-style: none;
+              padding: var(--space-2) 0 var(--space-1);
+              margin: 0;
+              display: flex;
+              align-items: center;
+              gap: 0;
+              overflow-x: auto;
+              scrollbar-width: none;
+            }
+
+            .rp-track::-webkit-scrollbar {
+              display: none;
+            }
+
+            .rp-stage {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              padding: var(--space-2);
+              min-width: 120px;
+              flex: 1 1 120px;
+              transition: transform 0.3s ease, opacity 0.3s ease;
+              opacity: 0;
+              transform: translateY(8px);
+              animation: rp-fade-up 0.45s ease forwards;
+              position: relative;
+            }
+
+            .rp-stage[data-index="0"] { animation-delay: 0.1s; }
+            .rp-stage[data-index="1"] { animation-delay: 0.22s; }
+            .rp-stage[data-index="2"] { animation-delay: 0.36s; }
+            .rp-stage[data-index="3"] { animation-delay: 0.5s; }
+            .rp-stage[data-index="4"] { animation-delay: 0.64s; }
+
+            @keyframes rp-fade-up {
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            .rp-stage::before {
+              content: '';
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              border: 2px solid var(--color-border);
+              background: var(--color-bg-surface);
+              box-shadow: 0 0 0 8px rgba(8, 8, 15, 0.55);
+            }
+
+            .rp-stage--domain {
+              transform: translateY(-6px);
+            }
+
+            .rp-stage--domain::before {
+              width: 16px;
+              height: 16px;
+              border-color: rgba(0, 212, 212, 0.75);
+              background: rgba(0, 212, 212, 0.18);
+              box-shadow: 0 0 0 10px rgba(0, 212, 212, 0.08);
+            }
+
+            .rp-stage--transform::before {
+              border-color: rgba(0, 212, 212, 0.45);
+            }
+
+            .rp-stage--govern::before {
+              border-color: rgba(123, 47, 255, 0.55);
+            }
+
+            .rp-num {
+              font-family: var(--font-display);
+              font-size: 0.72rem;
+              font-weight: 700;
+              letter-spacing: 0.1em;
+              color: var(--color-text-muted);
+            }
+
+            .rp-stage--domain .rp-num {
+              background: var(--gradient-accent);
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+            }
+
+            .rp-name {
+              font-family: var(--font-heading);
+              font-size: 0.98rem;
+              font-weight: 700;
+              color: var(--color-text-primary);
+              line-height: 1.3;
+            }
+
+            .rp-connector {
+              display: flex;
+              align-items: center;
+              padding: 0 2px;
+              flex-shrink: 0;
+              position: relative;
+              align-self: flex-start;
+              margin-top: 16px;
+            }
+
+            .rp-connector::before {
+              content: '';
+              display: block;
+              width: clamp(22px, 3vw, 34px);
+              height: 1px;
+              background: linear-gradient(90deg, rgba(136, 136, 170, 0.36), rgba(136, 136, 170, 0.68));
+            }
+
+            .rp-connector--split::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: var(--color-bg-deep);
+              border: 1px solid rgba(123, 47, 255, 0.45);
+              box-shadow: 0 0 0 5px rgba(8, 8, 15, 0.75);
+            }
+
+            .domain-bridge {
+              margin: var(--space-6) 0;
+              padding: var(--space-4) var(--space-5);
+              max-width: 900px;
+              border: 1px solid var(--color-border);
+              border-radius: var(--radius-lg);
+              background: linear-gradient(180deg, rgba(22, 22, 42, 0.72), rgba(15, 15, 26, 0.92));
+              display: grid;
+              gap: var(--space-3);
+              position: relative;
+              overflow: hidden;
+            }
+
+            .domain-bridge::before {
+              content: '';
+              position: absolute;
+              inset: 0 auto auto 0;
+              width: 100%;
+              height: 1px;
+              background: linear-gradient(90deg, rgba(0, 212, 212, 0.7), rgba(123, 47, 255, 0));
+            }
+
+            .domain-bridge-header {
+              display: grid;
+              gap: var(--space-1);
+              max-width: 620px;
+            }
+
+            .domain-bridge-copy {
+              display: grid;
+              gap: var(--space-3);
+              color: var(--color-text-muted);
+            }
+
+            @media (max-width: 767px) {
+              .rp-panel {
+                padding: var(--space-3);
+              }
+
+              .rp-track {
+                gap: var(--space-1);
+                flex-wrap: nowrap;
+              }
+
+              .rp-stage {
+                min-width: 116px;
+              }
+
+              .rp-name {
+                font-size: 0.88rem;
+              }
+
+              .domain-bridge {
+                padding: var(--space-3);
+                border-radius: var(--radius-md);
+              }
+            }
+          </style>
         </div>
       </section>
 
@@ -75,10 +326,10 @@
           <div class="two-col reveal" style="grid-template-columns: 1fr 1.2fr; align-items: center;">
             <div>
               <p>
-                The problem was too practical for theory alone and too consequential for an unstructured prototype exercise. It involved technology, governance, organisational design, risk, and transformation at the same time. Design Science Research Methodology provided a disciplined way to move from problem definition to artefact design, demonstration, evaluation, and communication.
+                The problem could not be resolved through abstract policy analysis alone, nor through a loose prototype exercise. It needed artefact-based inquiry that could make governance constraints, design assumptions, and operational trade-offs visible inside a working system.
               </p>
               <p style="margin-top: var(--space-2);">
-                In other words, DSRM made it possible to investigate the enterprise AI problem by building, testing, and learning from real artefacts rather than stopping at abstract analysis.
+                DSRM provided that structure: a disciplined way to frame the problem, ground it in a real domain, build deliberately, and examine the resulting systems credibly.
               </p>
             </div>
             <aside aria-label="DSRM diagram">
@@ -88,151 +339,107 @@
         </div>
       </section>
 
+      <!-- SECTION 2 — Research question -->
       <section>
         <div class="container">
-          <div class="section-intro reveal">
+          <div class="section-intro center-block reveal" style="text-align: center;">
             <span class="eyebrow">The starting point</span>
             <h2>The research question</h2>
           </div>
           <blockquote class="pull-quote center-block reveal">
             How can organisations safely adopt Generative AI when its inherently non-deterministic behaviour is in direct tension with the governed, rule-bound, and auditable structures that enterprises must maintain?
           </blockquote>
-          <p class="muted-center reveal" style="margin-top: var(--space-2);">
-            This question framed the entire study. It shaped what needed to be built, what had to be demonstrated, and what would count as a meaningful outcome.
+          <p class="muted-center reveal" style="margin-top: var(--space-3);">
+            This question framed the entire study. It shaped what needed to be understood, what had to be built, and what would count as a meaningful research contribution.
           </p>
         </div>
       </section>
 
+      <!-- SECTION 3 — DSRM path -->
       <section>
         <div class="container">
           <div class="section-intro reveal">
             <span class="eyebrow">The DSRM path</span>
-            <h2>From problem to artefact to framework</h2>
+            <h2>From problem framing to design and development</h2>
           </div>
+
           <div class="dsrm-steps">
-            <article class="dsrm-step reveal"><span class="dsrm-step-number">1</span><div><h3>Problem identification and motivation</h3><p>The research began by defining the core tension between probabilistic AI behaviour and deterministic enterprise governance. This was not treated as a minor implementation issue, but as a structural mismatch at the heart of enterprise AI adoption.</p></div></article>
-            <article class="dsrm-step reveal"><span class="dsrm-step-number">2</span><div><h3>Objectives for a solution</h3><p>The next step was to define what a safe enterprise AI solution would actually need to achieve. That meant making the incompatibility gap explicit, defining measurable acceptance criteria, specifying design requirements, and recognising that any workable solution had to support both transformative experimentation and governed operational improvement.</p></div></article>
-            <article class="dsrm-step reveal"><span class="dsrm-step-number">3</span><div><h3>Design and development</h3><p>Two artefacts were then built to explore the problem from different angles: GridProbity and OsciProbity. Together they tested not only what AI could do, but how different styles of AI-assisted development behave under very different organisational expectations.</p></div></article>
-            <article class="dsrm-step reveal"><span class="dsrm-step-number">4</span><div><h3>Demonstration</h3><p>The artefacts were demonstrated in realistic but controlled scenarios rather than live operations. This allowed the research to test plausibility, governance logic, and stakeholder response without overstating production deployment.</p></div></article>
-            <article class="dsrm-step reveal"><span class="dsrm-step-number">5</span><div><h3>Evaluation</h3><p>The work was evaluated as prototype research rather than industrialised rollout. The focus was on whether the required capabilities could be built quickly, meaningfully, and credibly, and whether the resulting patterns were strong enough to inform reusable frameworks.</p></div></article>
-            <article class="dsrm-step reveal"><span class="dsrm-step-number">6</span><div><h3>Communication</h3><p>The final step is what this website contributes to: communicating the problem, artefacts, findings, and frameworks in a form that both researchers and practitioners can use.</p></div></article>
+            <article class="dsrm-step reveal">
+              <span class="dsrm-step-number">1</span>
+              <div>
+                <h3>Problem identification and motivation</h3>
+                <p>The research began by defining the core tension between probabilistic AI behaviour and deterministic enterprise governance. This was not treated as a minor implementation issue, but as a structural mismatch at the heart of enterprise AI adoption.</p>
+              </div>
+            </article>
+            <article class="dsrm-step reveal">
+              <span class="dsrm-step-number">2</span>
+              <div>
+                <h3>Objectives for a solution</h3>
+                <p>The next step was to define what a safe enterprise AI solution would actually need to achieve. That meant making the incompatibility gap explicit, defining acceptance expectations, identifying design requirements, and recognising that any workable approach had to support both transformative experimentation and governed operational improvement.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Domain grounding inset — bridge between Step 2 and Step 3 -->
+          <aside class="domain-bridge reveal" aria-label="Domain grounding: power transmission">
+            <div class="domain-bridge-header">
+              <span class="eyebrow">The chosen domain</span>
+              <h3>Power transmission made the research concrete.</h3>
+            </div>
+            <div class="domain-bridge-copy">
+              <p>To make the research concrete, the study focused on the power transmission domain: a business environment shaped by heavy regulation, stringent audit and traceability requirements, near-zero risk appetite, and highly deterministic operational practice. It is precisely the kind of setting where stochastic and dynamic AI creates real organisational tension, because every consequential action must be understandable, governable, and capable of standing up to scrutiny.</p>
+              <p>Exploring AI in this context required organisational governance and operational understanding, domain insight, architectural and design principles, and a clear view of the broader industry conditions under which the organisation operates. That grounding enabled the first two DSRM steps to be established in a real enterprise setting before the research moved into design and development.</p>
+            </div>
+          </aside>
+
+          <div class="dsrm-steps">
+            <article class="dsrm-step reveal">
+              <span class="dsrm-step-number">3</span>
+              <div>
+                <h3>Design and development</h3>
+                <p>From that base, the research moved into building. The problem was approached from two directions at once: a transformative direction that explored new possibilities, and an incremental direction that worked within existing governance and operational constraints.</p>
+                <p style="margin-top: var(--space-2); color: var(--color-text-muted);">These two directions became the basis for the two systems developed in the study.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
+      <!-- SECTION 4 — Two products -->
       <section>
         <div class="container">
           <div class="section-intro reveal">
-            <span class="eyebrow">Two artefacts</span>
-            <h2>Two products were built to explore the problem from both sides</h2>
+            <span class="eyebrow">Two products</span>
+            <h2>Two systems were built to explore the problem from both directions.</h2>
             <p>
-              The research did not search for a single generic AI answer. Instead, it deliberately built two contrasting artefacts to surface the different demands of transformation and governance.
+              The research did not search for a single generic AI answer. Instead, it deliberately moved into design and development through two contrasting systems, each built to surface a different side of the enterprise AI challenge.
             </p>
           </div>
           <div class="feature-grid two reveal-stagger">
-            <article class="artifact-card feature-card" style="border-color: rgba(0, 212, 212, 0.42);">
-              <div class="placeholder-media" data-replace-with="assets/images/GridProbity.png" aria-label="GridProbity placeholder image">
-                <img src="assets/images/GridProbity.png" alt="GridProbity screenshot" style="width:100%;height:auto;display:block;border-radius:var(--radius-md);" />
+            <article class="artifact-card feature-card" style="border-color: rgba(0, 212, 212, 0.42); border-radius: 16px;">
+              <div class="placeholder-media" data-replace-with="assets/images/GridSense.png" aria-label="GridSense screenshot">
+                <img src="assets/images/GridSense.png" alt="GridSense screenshot" style="width:100%;height:auto;display:block;" />
               </div>
-              <h3>GridProbity — the transformative prototype</h3>
-              <p>
-                GridProbity explored the open, transformative side of enterprise AI. It was developed rapidly, in an exploratory style, to test how AI could help create a new kind of operator experience rather than simply automate an old one. It represented the space where ideas are discovered, interfaces are reimagined, and AI is used as a creative development partner.
-              </p>
+              <h3>GridSense — the transformative system</h3>
+              <p>GridSense explored the open, transformative side of enterprise AI. It was developed rapidly and experimentally to test how AI could help create a new kind of operator experience rather than simply automate an old one. It represented the space where ideas are discovered, interfaces are reimagined, and AI is used as a creative development partner.</p>
             </article>
-            <article class="artifact-card feature-card" style="border-color: rgba(123, 47, 255, 0.5);">
-              <div class="placeholder-media" data-replace-with="assets/images/OsciProbity.png" aria-label="OsciProbity placeholder image">
-                <img src="assets/images/OsciProbity.png" alt="OsciProbity screenshot" style="width:100%;height:auto;display:block;border-radius:var(--radius-md);" />
+            <article class="artifact-card feature-card" style="border-color: rgba(123, 47, 255, 0.5); border-radius: 10px;">
+              <div class="placeholder-media" data-replace-with="assets/images/OsciProbity.png" aria-label="OsciProbity screenshot">
+                <img src="assets/images/OsciProbity.png" alt="OsciProbity screenshot" style="width:100%;height:auto;display:block;" />
               </div>
-              <h3>OsciProbity — the governed prototype</h3>
-              <p>
-                OsciProbity explored the structured, auditable side of enterprise AI. It was shaped by requirements for governance, traceability, confidence-aware logic, and architectural discipline. Its development emphasised specifications, design review, and AI-assisted implementation within a more controlled engineering process.
-              </p>
+              <h3>OsciProbity — the governed system</h3>
+              <p>OsciProbity explored the structured, auditable side of enterprise AI. It was shaped by requirements for governance, traceability, confidence-aware logic, and architectural discipline. Its development emphasised specification, design review, and AI-assisted implementation within a more controlled engineering process.</p>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-intro reveal">
-            <span class="eyebrow">What the artefacts revealed</span>
-            <h2>The research uncovered three enterprise AI realities</h2>
-          </div>
-          <div class="feature-grid reveal-stagger" style="grid-template-columns: 1fr;">
-            <article class="feature-card"><h3>Enterprises need two AI modes</h3><p>GridProbity and OsciProbity showed that transformative discovery and governed improvement are not the same activity. They require different goals, rhythms, controls, and success measures.</p></article>
-            <article class="feature-card"><h3>A transition path is essential</h3><p>Without a deliberate bridge, transformative prototypes die in the lab and operations teams inherit systems they do not trust. A credible path must move ideas through stages of validation, pilot control, regulatory review, and operational ownership.</p></article>
-            <article class="feature-card"><h3>Governance must become operational</h3><p>Enterprise AI cannot be governed by policy statements alone. It requires concrete controls, engineering disciplines, and design patterns that translate enterprise expectations into working systems.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-intro reveal">
-            <span class="eyebrow">The outcome</span>
-            <h2>From research journey to reusable frameworks</h2>
-            <p>
-              The deeper outcome of the research was not just two prototypes. It was a set of reusable frameworks distilled from the tensions, decisions, and patterns that emerged while designing, building, demonstrating, and evaluating those artefacts.
-            </p>
-          </div>
-          <div class="feature-grid four reveal-stagger">
-            <article class="framework-card feature-card">
-              <div class="placeholder-media" data-replace-with="assets/images/framework-enterprise-ai.png" aria-label="Enterprise AI Framework placeholder image">
-                <svg viewBox="0 0 640 360" role="img" aria-label="Enterprise AI Framework">
-                  <defs><linearGradient id="f1" x1="0" x2="1"><stop stop-color="#00d4d4"/><stop offset="1" stop-color="#7b2fff"/></linearGradient></defs>
-                  <rect width="640" height="360" fill="#10101e"/>
-                  <path d="M80 260 C170 120 280 120 360 260" stroke="url(#f1)" stroke-width="8" fill="none"/>
-                  <path d="M280 260 C380 120 470 120 560 260" stroke="url(#f1)" stroke-width="8" fill="none"/>
-                </svg>
-              </div>
-              <h3>Enterprise AI Framework</h3>
-              <p>This framework captures the three connected modes of enterprise AI adoption: AI Lab, Transition Path, and Hub-and-Spoke Operations.</p>
-            </article>
-            <article class="framework-card feature-card">
-              <div class="placeholder-media" data-replace-with="assets/images/framework-hourglass.png" aria-label="The Hourglass Model placeholder image">
-                <svg viewBox="0 0 640 360" role="img" aria-label="The Hourglass Model">
-                  <rect width="640" height="360" fill="#10101e"/>
-                  <path d="M220 70h200l-120 110 120 110H220l120-110z" fill="none" stroke="#7b2fff" stroke-width="8"/>
-                </svg>
-              </div>
-              <h3>The Hourglass Model</h3>
-              <p>This model explains how broad societal and regulatory expectations are narrowed into organisational AI policy and then translated into operational controls.</p>
-            </article>
-            <article class="framework-card feature-card">
-              <div class="placeholder-media" data-replace-with="assets/images/framework-guardrails.png" aria-label="Enterprise AI Guardrails Framework placeholder image">
-                <svg viewBox="0 0 640 360" role="img" aria-label="Enterprise AI Guardrails Framework">
-                  <rect width="640" height="360" fill="#10101e"/>
-                  <rect x="100" y="90" width="440" height="30" fill="#00d4d4" opacity="0.7"/>
-                  <rect x="130" y="155" width="380" height="30" fill="#00d4d4" opacity="0.55"/>
-                  <rect x="160" y="220" width="320" height="30" fill="#00d4d4" opacity="0.4"/>
-                </svg>
-              </div>
-              <h3>Enterprise AI Guardrails Framework</h3>
-              <p>This framework defines the layered controls needed to contain probabilistic AI inside deterministic enterprise boundaries.</p>
-            </article>
-            <article class="framework-card feature-card">
-              <div class="placeholder-media" data-replace-with="assets/images/framework-engineering.png" aria-label="AI Engineering Disciplines Framework placeholder image">
-                <svg viewBox="0 0 640 360" role="img" aria-label="AI Engineering Disciplines Framework">
-                  <rect width="640" height="360" fill="#10101e"/>
-                  <g fill="#7b2fff" opacity="0.7">
-                    <rect x="110" y="95" width="420" height="45"/>
-                    <rect x="150" y="155" width="340" height="45"/>
-                    <rect x="190" y="215" width="260" height="45"/>
-                  </g>
-                </svg>
-              </div>
-              <h3>AI Engineering Disciplines Framework</h3>
-              <p>This framework describes the wider engineering stack required to build and run enterprise AI reliably beyond traditional MLOps alone.</p>
-            </article>
-          </div>
-          <p class="reveal" style="margin-top: var(--space-3);">
-            These frameworks are presented not as abstract theory, but as knowledge earned through artefact-based research. They are the distillation of what became necessary when enterprise AI was taken seriously enough to build, govern, demonstrate, and evaluate in practice.
+          <p class="muted-center reveal" style="margin-top: var(--space-5);">
+            The next page begins with these two systems and what each was designed to test.
           </p>
-          <div class="cta-block" style="margin-top: var(--space-4);">
-            <a class="btn-primary" href="artefacts.html">See the built artefacts</a>
+          <div class="cta-block reveal" style="margin-top: var(--space-3);">
+            <a class="btn-primary" href="artefacts.html">See the built systems</a>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer id="contact" class="site-footer">

@@ -102,3 +102,5 @@ When extending this site:
 ## Contact
 
 For enquiries: **contact@metaprobity.com**
+
+python3 -m http.server 8000
