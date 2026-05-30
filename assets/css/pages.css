@@ -1,0 +1,165 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wave {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  animation: drift-wave 20s linear infinite;
+}
+
+.hero-wave svg {
+  width: 120%;
+  min-width: 960px;
+  margin-left: -10%;
+  margin-top: -6%;
+}
+
+.hero-index {
+  background: var(--color-bg-deep);
+}
+
+.hero-research {
+  background: var(--color-bg-surface);
+}
+
+.hero-research::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(232, 232, 240, 0.16) 1px, transparent 0);
+  background-size: 26px 26px;
+  opacity: 0.04;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.hero-copy {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 740px;
+}
+
+.hero-support {
+  font-size: 0.95rem;
+}
+
+.hero-abstract {
+  display: none;
+}
+
+.hero-divider {
+  width: 2px;
+  height: 220px;
+  background: var(--gradient-accent);
+  opacity: 0.7;
+}
+
+.shape-fluid,
+.shape-angular {
+  width: min(240px, 40vw);
+  height: min(300px, 46vw);
+  border: 1px solid var(--color-border);
+}
+
+.shape-fluid {
+  border-radius: 50% 30% 44% 56% / 36% 46% 54% 64%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 212, 212, 0.25), transparent 66%);
+  box-shadow: 0 0 42px rgba(0, 212, 212, 0.18);
+}
+
+.shape-angular {
+  border-radius: 10px 2px 14px 4px;
+  background: linear-gradient(145deg, rgba(123, 47, 255, 0.23), rgba(123, 47, 255, 0.02));
+  box-shadow: 0 0 42px rgba(123, 47, 255, 0.2);
+}
+
+.comparison-panel {
+  border-top: 3px solid var(--color-accent-cyan);
+}
+
+.comparison-panel.purple {
+  border-top-color: var(--color-accent-purple);
+}
+
+.center-block {
+  max-width: 720px;
+  margin-inline: auto;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.feature-grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.feature-card.transformative {
+  border-color: rgba(0, 212, 212, 0.36);
+  border-radius: 16px;
+}
+
+.feature-card.improvement {
+  border-color: rgba(123, 47, 255, 0.4);
+  border-radius: 10px;
+}
+
+.artifact-card,
+.framework-card {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.artifact-card .feature-card,
+.framework-card .feature-card {
+  padding: var(--space-2);
+}
+
+@keyframes drift-wave {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-2%) translateY(1.5%); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .hero-copy {
+    gap: var(--space-3);
+  }
+
+  .hero-abstract {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  .feature-grid.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-grid.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature-grid.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
