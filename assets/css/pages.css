@@ -60,31 +60,66 @@
   display: none;
 }
 
-.hero-divider {
-  width: 2px;
-  height: 220px;
-  background: var(--gradient-accent);
-  opacity: 0.7;
+.hero-diagram {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  overflow: visible;
 }
 
-.shape-fluid,
-.shape-angular {
-  width: min(240px, 40vw);
-  height: min(300px, 46vw);
-  border: 1px solid var(--color-border);
+.chaos-lines {
+  stroke: #00d4d4;
+  stroke-width: 1.4;
+  opacity: 0.45;
+  fill: none;
+  transition: opacity 0.5s ease;
 }
 
-.shape-fluid {
-  border-radius: 50% 30% 44% 56% / 36% 46% 54% 64%;
-  background: radial-gradient(circle at 30% 30%, rgba(0, 212, 212, 0.25), transparent 66%);
-  box-shadow: 0 0 42px rgba(0, 212, 212, 0.18);
+.nd {
+  fill: #00d4d4;
+  opacity: 0.88;
+  stroke: rgba(0, 212, 212, 0.5);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #00d4d4);
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.shape-angular {
-  border-radius: 10px 2px 14px 4px;
-  background: linear-gradient(145deg, rgba(123, 47, 255, 0.23), rgba(123, 47, 255, 0.02));
-  box-shadow: 0 0 42px rgba(123, 47, 255, 0.2);
+.grid-lines {
+  stroke: #7b2fff;
+  stroke-width: 1.4;
+  opacity: 0.45;
+  fill: none;
+  transition: opacity 0.4s ease;
 }
+
+.gn {
+  fill: #7b2fff;
+  opacity: 0.82;
+  stroke: rgba(123, 47, 255, 0.6);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px #7b2fff);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.diagram-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.label-chaos { fill: #00d4d4; }
+.label-grid  { fill: #7b2fff; }
+
+.hero-abstract:hover .diagram-label { opacity: 1; }
+.hero-abstract:hover .chaos-lines   { opacity: 0.72; }
+.hero-abstract:hover .grid-lines    { opacity: 0.65; }
+.hero-abstract:hover .nd            { filter: drop-shadow(0 0 9px #00d4d4); }
+.hero-abstract:hover .gn            { opacity: 0.98; filter: drop-shadow(0 0 9px #7b2fff); }
 
 .comparison-panel {
   border-top: 3px solid var(--color-accent-cyan);
@@ -145,8 +180,6 @@
   .hero-abstract {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
   }
 
   .feature-grid.two {

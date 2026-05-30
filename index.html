@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@400;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Syne:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/variables.css" />
@@ -65,7 +65,7 @@
             <span class="eyebrow">Enterprise AI adoption research</span>
             <h1>AI is powerful.<br />Organisations need control.</h1>
             <p>
-              Generative AI behaves probabilistically, but enterprises are built on accountability, repeatability, and traceability. That mismatch is why so many organisations struggle to move from experimentation to safe adoption.
+              Generative AI behaves non-deterministically, but enterprise governance is built on accountability, repeatability, and traceability. That mismatch is why so many organisations struggle to move from experimentation to safe adoption.
             </p>
             <p class="hero-support">
               A research journey into how enterprises can govern the beast without killing its value.
@@ -76,9 +76,95 @@
             </div>
           </div>
           <div class="hero-abstract" aria-hidden="true">
-            <div class="shape-fluid"></div>
-            <div class="hero-divider"></div>
-            <div class="shape-angular"></div>
+            <svg class="hero-diagram" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="glow-left" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#00d4d4" stop-opacity="0.38"/>
+                  <stop offset="100%" stop-color="#00d4d4" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="glow-right" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#7b2fff" stop-opacity="0.32"/>
+                  <stop offset="100%" stop-color="#7b2fff" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="div-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"   stop-color="#00d4d4" stop-opacity="0.04"/>
+                  <stop offset="38%"  stop-color="#00d4d4" stop-opacity="0.8"/>
+                  <stop offset="62%"  stop-color="#7b2fff" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#7b2fff" stop-opacity="0.04"/>
+                </linearGradient>
+              </defs>
+
+              <!-- ambient glow pools -->
+              <ellipse cx="95"  cy="150" rx="115" ry="130" fill="url(#glow-left)"/>
+              <ellipse cx="325" cy="150" rx="115" ry="130" fill="url(#glow-right)"/>
+
+              <!-- LEFT — probabilistic AI: organic drifting nodes -->
+              <g class="chaos-lines">
+                <line x1="55"  y1="85"  x2="82"  y2="162"/>
+                <line x1="82"  y1="162" x2="128" y2="58"/>
+                <line x1="42"  y1="202" x2="82"  y2="162"/>
+                <line x1="118" y1="232" x2="152" y2="118"/>
+                <line x1="62"  y1="122" x2="102" y2="98"/>
+                <line x1="128" y1="58"  x2="152" y2="118"/>
+                <line x1="42"  y1="202" x2="118" y2="232"/>
+              </g>
+              <g class="nodes-chaos">
+                <circle class="nd nd-a" cx="55"  cy="85"  r="7"/>
+                <circle class="nd nd-b" cx="128" cy="58"  r="5.5"/>
+                <circle class="nd nd-c" cx="82"  cy="162" r="9"/>
+                <circle class="nd nd-d" cx="152" cy="118" r="5"/>
+                <circle class="nd nd-e" cx="42"  cy="202" r="6.5"/>
+                <circle class="nd nd-f" cx="118" cy="232" r="5.5"/>
+                <circle class="nd nd-a" cx="62"  cy="122" r="6"   style="animation-delay:-3.2s"/>
+                <circle class="nd nd-c" cx="138" cy="192" r="7"   style="animation-delay:-1.4s"/>
+                <circle class="nd nd-b" cx="30"  cy="142" r="5"   style="animation-delay:-5s"/>
+                <circle class="nd nd-e" cx="102" cy="98"  r="6.5" style="animation-delay:-2.1s"/>
+                <circle class="nd nd-f" cx="162" cy="252" r="5"   style="animation-delay:-4.3s"/>
+                <circle class="nd nd-d" cx="72"  cy="250" r="6"   style="animation-delay:-0.8s"/>
+              </g>
+
+              <!-- CENTRE — the gap / tension divider -->
+              <line x1="210" y1="14" x2="210" y2="286" stroke="url(#div-grad)" stroke-width="1.5"/>
+
+              <!-- RIGHT — deterministic enterprise: structured grid -->
+              <g class="grid-lines">
+                <line x1="250" y1="60"  x2="378" y2="60"/>
+                <line x1="250" y1="108" x2="378" y2="108"/>
+                <line x1="250" y1="156" x2="378" y2="156"/>
+                <line x1="250" y1="204" x2="378" y2="204"/>
+                <line x1="250" y1="252" x2="378" y2="252"/>
+                <line x1="250" y1="60"  x2="250" y2="252"/>
+                <line x1="292" y1="60"  x2="292" y2="252"/>
+                <line x1="335" y1="60"  x2="335" y2="252"/>
+                <line x1="378" y1="60"  x2="378" y2="252"/>
+              </g>
+              <g class="nodes-grid">
+                <circle class="gn" cx="250" cy="60"  r="5"/>
+                <circle class="gn" cx="292" cy="60"  r="5"/>
+                <circle class="gn" cx="335" cy="60"  r="5"/>
+                <circle class="gn" cx="378" cy="60"  r="5"/>
+                <circle class="gn" cx="250" cy="108" r="5"/>
+                <circle class="gn" cx="292" cy="108" r="5"/>
+                <circle class="gn" cx="335" cy="108" r="5"/>
+                <circle class="gn" cx="378" cy="108" r="5"/>
+                <circle class="gn" cx="250" cy="156" r="5"/>
+                <circle class="gn" cx="292" cy="156" r="5"/>
+                <circle class="gn" cx="335" cy="156" r="5"/>
+                <circle class="gn" cx="378" cy="156" r="5"/>
+                <circle class="gn" cx="250" cy="204" r="5"/>
+                <circle class="gn" cx="292" cy="204" r="5"/>
+                <circle class="gn" cx="335" cy="204" r="5"/>
+                <circle class="gn" cx="378" cy="204" r="5"/>
+                <circle class="gn" cx="250" cy="252" r="5"/>
+                <circle class="gn" cx="292" cy="252" r="5"/>
+                <circle class="gn" cx="335" cy="252" r="5"/>
+                <circle class="gn" cx="378" cy="252" r="5"/>
+              </g>
+
+              <!-- labels: visible on hover -->
+              <text class="diagram-label label-chaos" x="100" y="292" text-anchor="middle">PROBABILISTIC</text>
+              <text class="diagram-label label-grid"  x="314" y="292" text-anchor="middle">GOVERNED</text>
+            </svg>
           </div>
         </div>
       </section>
@@ -97,7 +183,7 @@
               Generative AI disrupts those assumptions. The same prompt can produce different answers, confidence is often unstated, reasoning can be opaque, and there is no native guarantee that an output will stay inside a compliance boundary or a defined risk threshold.
             </p>
             <blockquote class="pull-quote">
-              The problem is not that AI is weak. The problem is that it behaves differently from the systems enterprises were designed to trust.
+              AI is powerful but non-deterministic. Enterprises must harness that power within deterministic structures of trust, governance, and accountability.
             </blockquote>
           </div>
         </div>
@@ -113,19 +199,21 @@
             <article class="feature-card comparison-panel">
               <h3>AI behaves like this</h3>
               <ul>
-                <li>Outputs can vary from one run to the next.</li>
-                <li>Confidence is often implicit rather than explicit.</li>
-                <li>Reasoning is difficult to inspect directly.</li>
-                <li>Boundaries must be imposed from outside the model.</li>
+                <li>Non-deterministic: the same prompt can yield different answers.</li>
+                <li>Opaque: reasoning is hard to inspect or explain.</li>
+                <li>Overconfident: it can sound certain while guessing.</li>
+                <li>Hallucinatory: it may invent facts, scenarios or assumptions.</li>
+                <li>Needs guardrails: boundaries must be imposed externally.</li>
               </ul>
             </article>
             <article class="feature-card comparison-panel purple">
               <h3>Enterprises need this</h3>
               <ul>
-                <li>Repeatability and reliable outcomes.</li>
-                <li>Clear accountability and traceability.</li>
-                <li>Defined risk thresholds and escalation paths.</li>
-                <li>Auditability, explainability, and policy compliance.</li>
+                <li>Trustworthy AI: predictable, low-risk, on-policy outcomes.</li>
+                <li>Clear owners, approvals and escalation paths.</li>
+                <li>Full auditability and traceability across data, models and outputs.</li>
+                <li>Explainability and transparency for scrutiny, audit and challenge.</li>
+                <li>Compliance by design, not after the fact.</li>
               </ul>
             </article>
           </div>
@@ -166,13 +254,13 @@
             <article class="feature-card transformative">
               <h3>Transformative</h3>
               <p>
-                This is the space for discovery. A small, cross-functional team works quickly, experiments freely, and uses AI as a colleague to explore what becomes newly possible. The aim is not immediate operational certainty, but learning velocity, new capability discovery, and evidence that a promising idea is worth pursuing.
+                This is the space for discovery. A small, cross-functional team works quickly, think wildly,experiments freely, and uses AI to prototype rapidly. The aim is not immediate operational certainty, but learning velocity, new capability discovery, and evidence that a promising idea is worth pursuing.
               </p>
               <ul>
-                <li>Small dedicated team.</li>
-                <li>Domain expert, architect/design thinker, engineers.</li>
-                <li>AI used as collaborator, not just tool.</li>
-                <li>Fast cycles of hypothesis, prototype, stress-test, and learn.</li>
+                <li>Small team, 2-4 people.</li>
+                <li>Domain expert, architect/design thinker, AI specialist.</li>
+                <li>AI drives every possible task.</li>
+                <li>Fast cycles of hypothesis, prototype, fail, learn and move-on.</li>
               </ul>
             </article>
             <article class="feature-card improvement">
@@ -259,7 +347,7 @@
         </div>
       </div>
       <div class="container">
-        <p class="copyright">© 2025 MetaProbity. All rights reserved.</p>
+        <p class="copyright">© 2026 MetaProbity. All rights reserved.</p>
       </div>
     </footer>
 
