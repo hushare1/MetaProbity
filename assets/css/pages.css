@@ -138,6 +138,10 @@
     grid-template-columns: 1.1fr 0.9fr;
   }
 
+  .hero-copy {
+    gap: var(--space-3);
+  }
+
   .hero-abstract {
     display: flex;
     align-items: center;
@@ -151,5 +155,11 @@
 
   .feature-grid.four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature-grid.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
