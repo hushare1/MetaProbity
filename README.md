@@ -62,7 +62,7 @@ To replace them:
 Example:
 
 ```html
-<img src="assets/images/gridsense-screenshot.jpg" alt="GridSense screenshot" />
+<img src="assets/images/GridProbity.png" alt="GridProbity screenshot" />
 ```
 
 ## Colour palette reference
