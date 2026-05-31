@@ -290,18 +290,69 @@
               color: var(--color-text-muted);
             }
 
+            .research-method-grid {
+              align-items: center;
+            }
+
+            @media (min-width: 768px) {
+              .research-method-grid {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+              }
+            }
+
             @media (max-width: 767px) {
+              .hero-research {
+                min-height: auto;
+              }
+
               .rp-panel {
                 padding: var(--space-3);
               }
 
+              .rp-header {
+                margin-bottom: var(--space-3);
+                padding-bottom: var(--space-2);
+              }
+
+              .rp-sub {
+                font-size: 0.88rem;
+              }
+
               .rp-track {
-                gap: var(--space-1);
-                flex-wrap: nowrap;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: var(--space-2);
+                overflow: visible;
+                padding-top: 0;
               }
 
               .rp-stage {
-                min-width: 116px;
+                min-width: 0;
+                padding: var(--space-2) 0 0 var(--space-4);
+                border-top: 1px solid rgba(42, 42, 69, 0.6);
+              }
+
+              .rp-stage:first-child {
+                border-top: 0;
+                padding-top: 0;
+              }
+
+              .rp-stage::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+              }
+
+              .rp-stage:first-child::before {
+                top: 6px;
+              }
+
+              .rp-stage--domain {
+                transform: none;
+              }
+
+              .rp-connector {
+                display: none;
               }
 
               .rp-name {
@@ -323,7 +374,7 @@
             <span class="eyebrow">Why this method</span>
             <h2>Why DSRM was the right approach</h2>
           </div>
-          <div class="two-col reveal" style="grid-template-columns: 1fr 1.2fr; align-items: center;">
+          <div class="two-col research-method-grid reveal">
             <div>
               <p>
                 The problem could not be resolved through abstract policy analysis alone, nor through a loose prototype exercise. It needed artefact-based inquiry that could make governance constraints, design assumptions, and operational trade-offs visible inside a working system.
