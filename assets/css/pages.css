@@ -29,6 +29,30 @@
   background: var(--color-bg-surface);
 }
 
+.hero-artefacts {
+  background: var(--color-bg-deep);
+  min-height: 68vh;
+}
+
+.hero-artefacts::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(232, 232, 240, 0.16) 1px, transparent 0);
+  background-size: 26px 26px;
+  opacity: 0.035;
+}
+
+.hero-artefacts::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 15% 60%, rgba(0, 212, 212, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 45% at 85% 40%, rgba(123, 47, 255, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 .hero-research::before {
   content: '';
   position: absolute;
