@@ -23,7 +23,15 @@
     });
   }, { threshold: 0.16 });
 
-  revealItems.forEach((el) => revealObserver.observe(el));
+  revealItems.forEach((el) => {
+    // Check if element is already visible in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-visible');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 
   const staggerObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
@@ -35,7 +43,16 @@
     });
   }, { threshold: 0.2 });
 
-  staggerGroups.forEach((group) => staggerObserver.observe(group));
+  staggerGroups.forEach((group) => {
+    const rect = group.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      [...group.children].forEach((child, index) => {
+        setTimeout(() => child.classList.add('is-visible'), index * 120);
+      });
+    } else {
+      staggerObserver.observe(group);
+    }
+  });
 
   const stripObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
@@ -48,5 +65,52 @@
     });
   }, { threshold: 0.28 });
 
-  strips.forEach((strip) => stripObserver.observe(strip));
+  strips.forEach((strip) => {
+    const rect = strip.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const nodes = strip.querySelectorAll('.stage-node');
+      nodes.forEach((node, index) => {
+        setTimeout(() => node.classList.add('is-visible'), index * 140);
+      });
+    } else {
+      stripObserver.observe(strip);
+    }
+  });
+
+  // Fallback: Ensure reveal elements are visible after a delay in case calculations failed
+  // Use multiple timeouts to catch edge cases with slow DOM rendering or network delays
+  const ensureVisibility = () => {
+    revealItems.forEach((el) => {
+      if (!el.classList.contains('is-visible')) {
+        el.classList.add('is-visible');
+      }
+    });
+    staggerGroups.forEach((group) => {
+      [...group.children].forEach((child) => {
+        if (!child.classList.contains('is-visible')) {
+          child.classList.add('is-visible');
+        }
+      });
+    });
+    strips.forEach((strip) => {
+      strip.querySelectorAll('.stage-node').forEach((node) => {
+        if (!node.classList.contains('is-visible')) {
+          node.classList.add('is-visible');
+        }
+      });
+    });
+  };
+
+  // Primary fallback: 300ms
+  setTimeout(ensureVisibility, 300);
+
+  // Secondary fallback: 1000ms (catches very slow network scenarios)
+  setTimeout(ensureVisibility, 1000);
+
+  // Tertiary fallback: On page load completion
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(ensureVisibility, 100);
+    });
+  }
 })();
