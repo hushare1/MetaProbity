@@ -121,9 +121,78 @@
         border-radius: var(--radius-lg);
       }
 
+      /* ─── YouTube thumbnail link ───────────────────────────────── */
+      .yt-thumbnail-link {
+        display: block;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 480px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .yt-thumbnail-link img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.85);
+        transition: filter 0.3s ease;
+      }
+
+      .yt-thumbnail-link:hover img {
+        filter: brightness(1);
+      }
+
+      .yt-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px;
+        height: 72px;
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+      }
+
+      .yt-thumbnail-link:hover .yt-play-btn {
+        background: #FF0000;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .yt-play-btn svg {
+        width: 32px;
+        height: 32px;
+        fill: #ffffff;
+        margin-left: 5px;
+      }
+
+      .yt-watch-label {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        font-size: 1.5rem;
+        padding: 4px 14px;
+        border-radius: 20px;
+        white-space: nowrap;
+        pointer-events: none;
+        letter-spacing: 0.02em;
+      }
+
       .media-caption {
-        font-size: 0.85rem;
-        color: var(--color-text-muted);
+        font-size: 1.0rem;
+        color: #ffffff;
         text-align: center;
         margin-top: var(--space-2);
         font-style: italic;
@@ -464,11 +533,10 @@
             <span class="eyebrow">What we built</span>
             <h1>Two Systems. Two Approaches. One Proof.</h1>
             <p>
-              These are not concept papers. GridProbity and OsciProbity are working MVP (Minimum Viable Product) — two real power-system intelligence tools built by a single IT professional, using AI capability, under deliberately different methodologies. One was built fast, in flow, shaped by vibe coding and iteration. The other was built slowly, under discipline, with every behaviour defined in a spec before a line of code was written.
+              These are not concept papers. GridProbity and OsciProbity are working MVPs (Minimum Viable Product) — two real power-system intelligence tools built by a single IT professional, using AI capability under deliberately different methodologies. One was built quickly, in flow, shaped by iterative "vibe coding". The other was built deliberately and methodically, with every behavior defined in a specification before a single line of code was written.
             </p>
             <p class="hero-support">
-              Both work. What they demonstrate, above all, is what one person or small team with the right AI tools and domain knowledge can now build alone or with small team.
-            </p>
+              Both work. Above all, they demonstrate what a single individual or a small team can now build independently with the right AI tools and domain knowledge. </p>
             <div class="btn-row" style="margin-top: var(--space-2);">
               <a class="btn-primary" href="#gridprobity">GridProbity</a>
               <a class="btn-secondary" href="#osciprobity">OsciProbity 2.0</a>
@@ -484,7 +552,7 @@
         <div class="container">
           <p class="callout-band-headline">One engineer. Two enterprise-grade MVPs. AI as the force multiplier.</p>
           <p class="callout-band-body">
-            GridProbity and OsciProbity 2.0 were designed, architected, specified, and built entirely by a single person — augmented by AI coding tools. No development team. No dedicated QA. No separate architects or UI designers. AI handled what previously required scale: volume of code, breadth of implementation, and consistency of pattern. The domain knowledge, methodology choices, architecture, design and engineering judgment remained human.
+            GridProbity and OsciProbity 2.0 were designed, architected, specified, and built entirely by a single person, augmented by AI coding tools. There was no development team, no dedicated QA, and no separate architects or UI designers. AI handled what previously required scale: the volume of code, the breadth of implementation, and the consistency of patterns. The domain knowledge, methodological choices, architecture, design, and engineering judgment remained human.
           </p>
         </div>
       </div>
@@ -504,34 +572,24 @@
           <div class="two-col artefact-intro reveal">
             <div>
               <p class="artefact-sub-heading">Positioning</p>
-              <p>GridProbity is a full-stack power grid monitoring platform built using a transformative, vibe-driven development pattern — where AI agents and the domain expert move together in flow, letting the architecture emerge from rapid iteration rather than upfront design. The result is an enterprise-grade platform that one person built with the speed and confidence that previously required a team.</p>
+              <p>GridProbity is a full-stack power grid monitoring and predictive platform that reimagines what SCADA can be, moving beyond the dense, 1970s-era control-room UI. It is built using a transformative, vibe-driven pattern where AI agents and domain expertise move together in flow, letting architecture emerge from rapid iteration rather than upfront design. AI-assisted coding, modern web technologies, refined Python libraries, and data tooling augment parts of the classic SCADA stack, while engineering judgement and protection-domain knowledge stay firmly human. The result is a minimum-viable platform that one person built with the speed and confidence that previously required a team.</p>
             </div>
             <div>
               <p class="artefact-sub-heading">What It Does</p>
-              <p>GridProbity integrates real-time PMU (Phasor Measurement Unit) data streaming, Extended Kalman Filter (EKF) state estimation, Bayesian predictive model, network topology analysis, and power flow calculations into a unified monitoring environment for grid operators and analysts. It presents live grid state, voltage stability indicators, and alert conditions across a multi-view HTML dashboard — with a dedicated operator view, an enhanced analytics dashboard, and a PE (protection engineering) validation interface.</p>
+              <p>GridProbity integrates real-time PMU (Phasor Measurement Unit) data streaming, advanced state estimation, Bayesian predictive modelling, network topology analysis, and power flow calculations into a unified monitoring environment for grid operators and analysts. It presents live grid state, voltage stability indicators, and alert conditions across a multi-view HTML dashboard, with a dedicated operator view, an enhanced analytics dashboard, and a PE (protection engineering) validation interface.</p>
             </div>
           </div>
 
           <!-- Video Placeholder -->
           <div class="reveal" style="margin-top: var(--space-5);">
-            <div class="placeholder-media artefact-video-placeholder" aria-label="GridProbity walkthrough video — coming soon">
-              <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="800" height="450" fill="#0a0a14"/>
-                <line x1="0" y1="0" x2="800" y2="0" stroke="#2a2a45" stroke-width="1"/>
-                <line x1="0" y1="449" x2="800" y2="449" stroke="#2a2a45" stroke-width="1"/>
-                <!-- Decorative waveform suggesting real-time data -->
-                <path d="M40 280 C80 200, 120 320, 160 240 C200 160, 240 300, 280 220 C320 140, 360 280, 400 200 C440 120, 480 260, 520 180 C560 100, 600 260, 640 200 C680 140, 720 240, 760 180" stroke="rgba(0,212,212,0.2)" stroke-width="2" fill="none"/>
-                <path d="M40 300 C80 260, 120 340, 160 280 C200 220, 240 320, 280 260 C320 200, 360 300, 400 240 C440 180, 480 280, 520 220 C560 160, 600 280, 640 220 C680 160, 720 260, 760 200" stroke="rgba(0,212,212,0.1)" stroke-width="1.5" fill="none"/>
-                <!-- Play button -->
-                <circle cx="400" cy="200" r="42" fill="none" stroke="rgba(0,212,212,0.35)" stroke-width="2"/>
-                <circle cx="400" cy="200" r="28" fill="rgba(0,212,212,0.06)"/>
-                <polygon points="391,188 391,212 417,200" fill="rgba(0,212,212,0.55)"/>
-                <!-- Caption -->
-                <text x="400" y="270" font-family="Inter, sans-serif" font-size="13" fill="#8888aa" text-anchor="middle" letter-spacing="0.05em">GRIDPROBITY — WALKTHROUGH VIDEO</text>
-                <text x="400" y="292" font-family="Inter, sans-serif" font-size="11" fill="#555570" text-anchor="middle">Recorded demonstration to be embedded here</text>
-              </svg>
-            </div>
-            <p class="media-caption">GridProbity live dashboard — full walkthrough recording coming soon.</p>
+            <a class="yt-thumbnail-link" href="https://www.youtube.com/watch?v=DsgBleGQaXw" target="_blank" rel="noopener noreferrer" aria-label="Watch GridProbity Walkthrough Video on YouTube">
+              <img src="https://img.youtube.com/vi/DsgBleGQaXw/hqdefault.jpg" alt="GridProbity Walkthrough Video thumbnail" loading="lazy">
+              <span class="yt-play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="yt-watch-label">Watch on YouTube</span>
+            </a>
+            <p class="media-caption">GridProbity Monitoring and Predictive Analytics — full walkthrough recording.</p>
           </div>
 
           <!-- Key UI Features -->
@@ -539,20 +597,20 @@
             <h3 style="margin-bottom: var(--space-3);">Key UI &amp; Platform Features</h3>
             <div class="feature-grid two">
               <article class="feature-card transformative">
-                <h4>Live dashboard with real-time updates</h4>
-                <p>Grid state refreshed at 30 Hz PMU data rate, with animated KPI indicators and alert management delivered over WebSocket.</p>
+                <h4>Reduced operational risk for grid operators</h4>
+                <p>Continuous real-time state estimation and voltage stability monitoring give control-room teams an always-current view of grid health — enabling faster, more confident decisions before faults escalate into outages.</p>
               </article>
               <article class="feature-card transformative">
-                <h4>Operator control panel</h4>
-                <p>Purpose-built <code>operator.html</code> view with a control-room layout and action-oriented interface purpose-built for grid operators.</p>
+                <h4>Unified monitoring across the entire network</h4>
+                <p>A single platform consolidates bus-level measurements, network topology, power-flow calculations, and contingency analysis — eliminating the need for multiple siloed tools and giving engineering teams one authoritative source of truth.</p>
               </article>
               <article class="feature-card transformative">
-                <h4>PE Validation interface</h4>
-                <p>Dedicated <code>validation.html</code> for protection engineering scenario testing and replay — a separate experience surface for the PE discipline.</p>
+                <h4>Real-time data pipeline at PMU measurement rates</h4>
+                <p>An open-standards streaming layer capable of ingesting data from 0.1 Hz to 60 Hz — delivering sub-second grid-state updates to dashboards, operator panels, and connected analytics tools through documented API interfaces.</p>
               </article>
               <article class="feature-card transformative">
-                <h4>Interactive network visualisation</h4>
-                <p>Topology-aware grid map with node and branch state overlays. Five distinct experience surfaces served via Nginx, with responsive mobile-first CSS.</p>
+                <h4>Fast deployment with minimal infrastructure overhead</h4>
+                <p>The platform ships as a self-contained, containerised stack that stands up in a single command — reducing time-to-value from weeks to hours and scaling from a single-server pilot to a load-balanced production environment without architectural changes.</p>
               </article>
             </div>
           </div>
@@ -648,24 +706,14 @@
 
           <!-- Video Placeholder -->
           <div class="reveal" style="margin-top: var(--space-5);">
-            <div class="placeholder-media artefact-video-placeholder" aria-label="OsciProbity 2.0 walkthrough video — coming soon">
-              <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="800" height="450" fill="#0a0a14"/>
-                <line x1="0" y1="0" x2="800" y2="0" stroke="#2a2a45" stroke-width="1"/>
-                <line x1="0" y1="449" x2="800" y2="449" stroke="#2a2a45" stroke-width="1"/>
-                <!-- Decorative probability waveform -->
-                <path d="M40 300 C80 280, 120 220, 160 260 C200 300, 240 180, 280 220 C320 260, 360 160, 400 200 C440 240, 480 140, 520 180 C560 220, 600 160, 640 200 C680 240, 720 180, 760 220" stroke="rgba(123,47,255,0.22)" stroke-width="2" fill="none"/>
-                <path d="M40 320 C80 300, 120 260, 160 290 C200 320, 240 240, 280 270 C320 300, 360 220, 400 250 C440 280, 480 200, 520 230 C560 260, 600 200, 640 230 C680 260, 720 210, 760 240" stroke="rgba(123,47,255,0.1)" stroke-width="1.5" fill="none"/>
-                <!-- Play button -->
-                <circle cx="400" cy="200" r="42" fill="none" stroke="rgba(123,47,255,0.35)" stroke-width="2"/>
-                <circle cx="400" cy="200" r="28" fill="rgba(123,47,255,0.06)"/>
-                <polygon points="391,188 391,212 417,200" fill="rgba(123,47,255,0.55)"/>
-                <!-- Caption -->
-                <text x="400" y="270" font-family="Inter, sans-serif" font-size="13" fill="#8888aa" text-anchor="middle" letter-spacing="0.05em">OSCIPROBITY 2.0 — WALKTHROUGH VIDEO</text>
-                <text x="400" y="292" font-family="Inter, sans-serif" font-size="11" fill="#555570" text-anchor="middle">Recorded demonstration to be embedded here</text>
-              </svg>
-            </div>
-            <p class="media-caption">OsciProbity 2.0 oscillation dashboard — full walkthrough recording coming soon.</p>
+            <a class="yt-thumbnail-link" href="https://www.youtube.com/watch?v=2-fvW1ii6kM" target="_blank" rel="noopener noreferrer" aria-label="Watch OsciProbity 2.0 Walkthrough Video on YouTube">
+              <img src="https://img.youtube.com/vi/2-fvW1ii6kM/maxresdefault.jpg" alt="OsciProbity 2.0 Walkthrough Video thumbnail" loading="lazy">
+              <span class="yt-play-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="yt-watch-label">Watch on YouTube</span>
+            </a>
+            <p class="media-caption">OsciProbity 2.0 oscillation dashboard — full walkthrough recording.</p>
           </div>
 
           <!-- Key UI Features -->
@@ -674,11 +722,11 @@
             <div class="feature-grid two">
               <article class="feature-card improvement">
                 <h4>Dual-band oscillation dashboard</h4>
-                <p>Simultaneous OPIEM and OPICI probability readouts, mode frequency and damping displays, real-time confidence indicators — all spec-defined and contract-traced. Modular design enables addition of more detectors in future.</p>
+                <p>Simultaneous IEM and ICI probability readouts, mode frequency and damping displays, and real-time confidence indicators — all specification-defined and contract-traced. The modular design enables addition of further detector types in the future, such as sub-synchronous control interaction (SSCI) events.</p>
               </article>
               <article class="feature-card improvement">
                 <h4>LLM-generated event intelligence panel</h4>
-                <p>AI powered natural language summaries of oscillation events, modes, and artefacts — bridging DSP output and operator understanding. Running in air-tight design on 8-core CPU. No API cost, no external dependency.</p>
+                <p>AI-powered natural language summaries of oscillation events, modes, forensic graphs, and artefacts — bridging DSP output and operator understanding. Runs on a standard 8-core CPU with 32 GB RAM in a fully air-gapped deployment, with no external API calls or third-party dependencies.</p>
               </article>
               <article class="feature-card improvement">
                 <h4>Algorithm ensemble transparency</h4>
@@ -715,7 +763,7 @@
               <span class="dsrm-step-number">1</span>
               <div>
                 <h4>Requirements</h4>
-                <p>Shared domain requirements were elicited from grid engineering first principles, translated into numbered functional requirements covering every detection behaviour.</p>
+                <p>Shared system requirements were elicited from grid engineering first principles, translated into numbered functional requirements covering every detection behaviour.</p>
               </div>
             </article>
             <article class="dsrm-step">
@@ -765,14 +813,13 @@
                   </table>
                 </div>
 
-                <p class="tech-table-label" style="margin-top: var(--space-3);">Open LLM Integration</p>
+                <p class="tech-table-label" style="margin-top: var(--space-3);">LLM Integration</p>
                 <div class="table-scroll">
                   <table class="tech-table">
                     <thead>
                       <tr><th>Layer</th><th>Technology</th><th>Role</th></tr>
                     </thead>
                     <tbody>
-                      <tr><td>LLM Runtime</td><td>Ollama (local)</td><td>Hosts and serves the open-weight model on-device</td></tr>
                       <tr><td>LLM Role</td><td>Oscillation event intelligence</td><td>Generates natural language descriptions of detected events, modes, and artefacts</td></tr>
                       <tr><td>Integration Point</td><td>Post-DSP layer</td><td>Receives structured DSP output; produces operator-readable narrative</td></tr>
                       <tr><td>Deployment</td><td>Local / on-premise</td><td>No cloud API dependency — runs fully offline</td></tr>
@@ -836,18 +883,14 @@
 
           <div class="section-intro center-block reveal" style="text-align: center;">
             <span class="eyebrow">Domain Expert Validation</span>
-            <h2>Tested by Power System Professionals</h2>
+            <h2>Appreciated by Power System and IT Professionals</h2>
           </div>
 
           <p class="reveal" style="max-width: 820px; margin-inline: auto; text-align: center; margin-bottom: var(--space-2);">
-            Both GridProbity and OsciProbity 2.0 have been demonstrated to power system domain experts. The response was positive: the tools were recognised as technically credible, practically relevant, and meaningfully differentiated from existing vendor offerings. What made the reception particularly significant is the context: both tools were built entirely by one person with domain knowledge, augmented by AI. Expert feedback confirmed that the depth of implementation — the dual-band OPIEM/OPICI architecture, the ensemble algorithm design, the LLM-generated event narrative — is indistinguishable from team-scale engineering effort.
+            Both GridProbity and OsciProbity 2.0 have been demonstrated to power system domain experts and IT professionals. The response was positive: the tools were recognised as technically credible, practically relevant, and meaningfully differentiated from existing vendor offerings. What made the reception particularly significant is the context: both tools were built entirely by one person with domain knowledge, augmented by AI. Expert feedback confirmed that the depth of implementation — the dual-band IEM/ICI architecture, the ensemble algorithm design, the LLM-generated event narrative, modern UI of Grid monitoring — is indistinguishable from team-scale engineering effort.
           </p>
 
-          <!-- Testimonial placeholder -->
-          <div class="testimonial-placeholder reveal" aria-label="Expert testimonials placeholder">
-            <p class="testimonial-placeholder-label">Expert testimonials — one or two attributed quotes from domain reviewers will be inserted here once confirmed</p>
-          </div>
-
+         
           <!-- Validation context -->
           <div class="validation-context reveal">
             <h3>Validation Context</h3>
@@ -856,7 +899,7 @@
               <li>Received positive assessment on technical depth and approach validity</li>
               <li>OsciProbity's features were identified as similar or better compared to equivalent existing systems</li>
               <li>GridProbity's real-time state estimation and multi-view operator interface reviewed positively for operational fit</li>
-              <li>LLM-generated event intelligence (Ollama integration) noted as a practical and novel addition for operator accessibility</li>
+              <li>LLM-generated event intelligence noted as a practical and novel addition for operator accessibility</li>
             </ul>
           </div>
 
@@ -872,7 +915,7 @@
           <div class="section-intro reveal">
             <span class="eyebrow">Methodology comparison</span>
             <h2>Two Methodologies, Compared Directly</h2>
-            <p>One domain expert. The same AI tools. What changes when you build with discipline versus flow? The table below captures the most significant differences observed across both builds — not as a verdict on which is better, but as an honest account of what each approach costs and what it produces.</p>
+            <p>Domain knowledge. The same AI tools. What changes when you build with discipline versus flow? The table below captures the most significant differences observed across both builds — not as a verdict on which is better, but as an honest account of what each approach costs and what it produces.</p>
           </div>
 
           <div class="table-scroll reveal">
@@ -914,7 +957,7 @@
                 <tr>
                   <td>LLM integration</td>
                   <td>None</td>
-                  <td>Ollama (local) — post-DSP event intelligence</td>
+                  <td>Oscillation events, mode, post-DSP intelligence</td>
                 </tr>
                 <tr>
                   <td>Frontend approach</td>
@@ -928,17 +971,17 @@
                 </tr>
                 <tr>
                   <td>Testing approach</td>
-                  <td><code>validation_comprehensive.py</code>, <code>validation_final.py</code></td>
+                  <td>Functionality validation.</td>
                   <td>pytest + Vitest + MSW + golden fixture spec</td>
                 </tr>
                 <tr>
                   <td>Dependency governance</td>
-                  <td><code>requirements.txt</code> (current versions)</td>
-                  <td>Pinned + hashed <code>requirements.txt</code> (normative spec)</td>
+                  <td>Requirements text file(current versions)</td>
+                  <td>Pinned + hashed Requirements text file (normative spec)</td>
                 </tr>
                 <tr>
                   <td>Config governance</td>
-                  <td><code>.env</code>-driven feature flags</td>
+                  <td>Environment-driven feature flags</td>
                   <td>Spec-versioned YAML; every parameter has a spec reference</td>
                 </tr>
                 <tr>
@@ -966,93 +1009,21 @@
           </div>
 
           <blockquote class="pull-quote reveal" style="margin-top: var(--space-5); max-width: 920px;">
-            What both builds share is more interesting than what separates them: both are enterprise-grade, both use the same AI tooling, and both were built by a single person with power-system domain knowledge — no team, no sprint planning, no architecture review board. The difference is where the intelligence lives. In GridProbity, intelligence lives in the domain expert's judgement — catching drift, shaping emergent structure, knowing when it feels right. In OsciProbity 2.0, intelligence was front-loaded into the specs — so that code generation became closer to compilation than creation. Neither is universally superior. The question any team must answer is: what kind of risk can you tolerate, at which stage?
+            What both builds share is more interesting than what separates them: both are enterprise-grade MVPs, both use the same AI tooling, and both were built by a single person with power-system domain knowledge. The difference is not just where the intelligence lives — it is when operationalisation enters the thinking.
           </blockquote>
 
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════════════════════════
-           SECTION 6 — Combined Technology Footprint
-      ══════════════════════════════════════════════════════════════ -->
-      <section>
-        <div class="container">
-
-          <div class="section-intro reveal">
-            <span class="eyebrow">Combined stack</span>
-            <h2>Full Technology Footprint</h2>
-            <p>Combined technology stack across both artefacts — organised by category.</p>
+          <div class="center-block reveal" style="margin-top: var(--space-3);">
+            <p>
+              In GridProbity, intelligence lives in the domain expert's judgement — catching drift, shaping emergent structure, knowing when it feels right. That is transformative development: a small team exploring the boundaries of what is possible, with the operationalisation plan forming only once the business sees a viable solution worth scaling.
+            </p>
+            <p style="margin-top: var(--space-2);">
+              In OsciProbity 2.0, intelligence was front-loaded into the specs — so that code generation became closer to compilation than creation. That is spec-based development: a small-to-medium team undertaking structured delivery, with operational aspects built into the design from the outset and a concrete plan for operationalising it running in parallel with the build itself.
+            </p>
           </div>
 
-          <div class="table-scroll reveal">
-            <table class="tech-table footprint-table">
-              <thead>
-                <tr>
-                  <th style="width: 200px;">Category</th>
-                  <th>Technology</th>
-                  <th class="text-center" style="width: 140px;"><span class="col-label--cyan">GridProbity</span></th>
-                  <th class="text-center" style="width: 140px;"><span class="col-label--purple">OsciProbity 2.0</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="group-row"><td colspan="4">AI Tooling</td></tr>
-                <tr><td></td><td>AI coding agent (LLM-based)</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>AI in-editor assistant</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>Ollama (local, on-premise open LLM)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Backend Language</td></tr>
-                <tr><td></td><td>Python 3.8+</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Python 3.11+</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Web Framework &amp; Validation</td></tr>
-                <tr><td></td><td>FastAPI + Uvicorn</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>Pydantic</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Numerical &amp; Grid Modelling</td></tr>
-                <tr><td></td><td>NumPy / SciPy</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>pandapower</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Apache Kafka (streaming ingestion)</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Extended Kalman Filter (state estimation)</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Matplotlib</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Jupyter</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-
-                <tr class="group-row"><td colspan="4">DSP &amp; Signal Processing</td></tr>
-                <tr><td></td><td>EMD-signal (EMD/HHT)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>vmdpy (VMD)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>ssqueezepy (synchrosqueezing)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>PyDMD (DMD, ERA, Matrix Pencil)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>scikit-learn (DBSCAN clustering)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>statsmodels (Granger causality)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>pandas (windowed data management)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>joblib (parallel execution)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Database</td></tr>
-                <tr><td></td><td>SQLAlchemy 2.0 + asyncpg</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>Alembic (migrations)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>PyArrow / Parquet (serialisation)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Frontend</td></tr>
-                <tr><td></td><td>Vanilla JS / HTML5 / CSS3</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>React 19 + TypeScript</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>Zustand 5 (state management)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>Vite 7 (build tooling)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>Vitest + MSW (frontend testing)</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Testing</td></tr>
-                <tr><td></td><td>pytest + pytest-cov</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Infrastructure</td></tr>
-                <tr><td></td><td>Docker / Docker Compose</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Nginx</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>Fly.io / Render (cloud PaaS)</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-                <tr><td></td><td>VS Code Dev Containers</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-
-                <tr class="group-row"><td colspan="4">Configuration &amp; Governance</td></tr>
-                <tr><td></td><td>Spec-versioned YAML config</td><td class="text-center dash">—</td><td class="text-center check">✓</td></tr>
-                <tr><td></td><td>.env feature flags</td><td class="text-center check">✓</td><td class="text-center dash">—</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <blockquote class="pull-quote reveal" style="margin-top: var(--space-3); max-width: 920px;">
+            Neither is universally superior. The question any team must answer is: at what stage must operationalisation enter your thinking — and are you structured to carry it through?
+          </blockquote>
 
         </div>
       </section>
@@ -1064,7 +1035,9 @@
         <div class="container cta-block reveal">
           <span class="eyebrow">What comes next</span>
           <h2>The Frameworks Behind the Builds</h2>
-          <p style="max-width: 680px;">Both artefacts are expressions of a broader research programme into how AI-augmented engineering teams should structure their work. The frameworks that shaped these methodologies — including the vibe coding pattern used in GridProbity and the spec-authority matrix used in OsciProbity 2.0 — are discussed in the next section.</p>
+          <p style="max-width: 680px;">Both artefacts are more than working systems — they are the empirical foundation of a broader research programme into how AI-augmented engineering teams should structure their work.</p>
+          <p style="max-width: 680px; margin-top: var(--space-2);">Building them surfaced something beyond the software itself: a set of repeatable AI development practices, integration patterns for embedding AI into governed workflows, and the beginnings of a practical AI engineering approach that takes seriously both the creative power of generative models and the accountability demands of enterprise environments.</p>
+          <p style="max-width: 680px; margin-top: var(--space-2);">The frameworks that emerged from this work — including the vibe coding pattern observed in GridProbity, the spec-authority model applied in OsciProbity 2.0, and a guardrail framework for constraining AI behaviour within defined operational boundaries — are discussed in the next section.</p>
           <div class="btn-row">
             <a class="btn-primary" href="frameworks.html">Explore the Frameworks →</a>
             <a class="btn-secondary" href="research.html">Back to Research</a>
@@ -1085,7 +1058,7 @@
             METAPROBITY
           </a>
           <p style="margin-top: var(--space-2);">
-            Enterprise AI adoption research — investigating the gap between probabilistic AI and deterministic organisations.
+            Enterprise AI adoption research — frameworks, engineering practices, and guardrails for governing AI in deterministic organisations.
           </p>
           <nav aria-label="Footer links" style="margin-top: var(--space-3);">
             <ul class="footer-nav-list">
