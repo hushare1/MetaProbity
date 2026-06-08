@@ -101,16 +101,30 @@
     });
   };
 
-  // Primary fallback: 300ms
+  // Immediate fallback for safety
+  setTimeout(ensureVisibility, 0);
+
+  // Primary fallback: 100ms (quick catch for slow DOM rendering)
+  setTimeout(ensureVisibility, 100);
+
+  // Secondary fallback: 300ms
   setTimeout(ensureVisibility, 300);
 
-  // Secondary fallback: 1000ms (catches very slow network scenarios)
+  // Tertiary fallback: 1000ms (catches very slow network scenarios)
   setTimeout(ensureVisibility, 1000);
 
-  // Tertiary fallback: On page load completion
+  // Quaternary fallback: Ensure visibility on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(ensureVisibility, 100);
+      setTimeout(ensureVisibility, 50);
     });
+  } else {
+    // Page already loaded, ensure visibility now
+    setTimeout(ensureVisibility, 50);
   }
+
+  // Final safety net: ensure visibility after all other events
+  window.addEventListener('load', () => {
+    setTimeout(ensureVisibility, 100);
+  });
 })();
