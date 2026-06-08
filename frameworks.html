@@ -1234,8 +1234,8 @@
               <span class="dev-card-number">Framework 04</span>
               <h4>AI Engineering Discipline Framework</h4>
               <p>Maps the full XOps stack required to run AI in an enterprise — from DataOps and MLOps foundations through LLMOps and AgentOps, to eight cross-cutting disciplines including PromptOps, FinOps for AI, AI Security Engineering, and Responsible AI Engineering.</p>
-              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 04">
-                Notify me when available →
+              <button class="dev-card-link" data-notify-focus aria-label="Contact us about Framework 04">
+                Contact us →
               </button>
             </article>
 
@@ -1244,8 +1244,8 @@
               <span class="dev-card-number">Framework 05</span>
               <h4>LLM Integration Patterns</h4>
               <p>Nine concrete integration patterns across three maturity phases — Direct, Augmented, and Agentic Integration — each with its own risk profile, governance requirements, and HiTL obligations. The Guardrail Sandwich invariant from Framework 03 applies across all nine patterns.</p>
-              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 05">
-                Notify me when available →
+              <button class="dev-card-link" data-notify-focus aria-label="Contact us about Framework 05">
+                Contact us →
               </button>
             </article>
 
@@ -1254,8 +1254,8 @@
               <span class="dev-card-number">Framework 06</span>
               <h4>AI Risk Tiering Model</h4>
               <p>A classification engine for assigning AI use cases to risk tiers — with specific governance requirements, HITL obligations, and audit rules per tier. Closes the gap left by all five existing frameworks, each of which references tiers but does not define how to assign them.</p>
-              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 06">
-                Notify me when available →
+              <button class="dev-card-link" data-notify-focus aria-label="Contact us about Framework 06">
+                Contact us →
               </button>
             </article>
 
@@ -1264,8 +1264,8 @@
               <span class="dev-card-number">Framework 07</span>
               <h4>AI Decision Boundary Map</h4>
               <p>A structured canvas for deciding, before any build begins, whether AI should be involved in a given decision at all — and at what level of autonomy. Four zones: Full Autonomy, AI-Assisted, AI-Advisory, AI-Excluded. Operationalises HITL at the decision level rather than the system level.</p>
-              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 07">
-                Notify me when available →
+              <button class="dev-card-link" data-notify-focus aria-label="Contact us about Framework 07">
+                Contact us →
               </button>
             </article>
 
@@ -1274,8 +1274,8 @@
               <span class="dev-card-number">Framework 08</span>
               <h4>AI Capability Maturity Assessment</h4>
               <p>A five-dimension self-assessment model for diagnosing an organisation's current AI maturity and identifying the capability gaps that must be closed to progress. Designed to generate an actionable priority list from a 90-minute team session.</p>
-              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 08">
-                Notify me when available →
+              <button class="dev-card-link" data-notify-focus aria-label="Contact us about Framework 08">
+                Contact us →
               </button>
             </article>
 
@@ -1284,30 +1284,13 @@
               <span class="dev-card-number">Framework 09</span>
               <h4>AI Incident Response Playbook</h4>
               <p>Organisational response choreography for when AI systems fail — output errors, model drift, data poisoning, regulatory inquiry. Covers severity classification, response roles, evidence preservation, and the post-incident → guardrail improvement loop.</p>
-              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 09">
-                Notify me when available →
+              <button class="dev-card-link" data-notify-focus aria-label="Contact us about Framework 09">
+                Contact us →
               </button>
             </article>
           </div>
 
-          <div class="reveal" style="margin-top: var(--space-5);">
-            <p style="font-size: 0.9rem; margin-bottom: var(--space-2);">Notify me when new frameworks are published</p>
-            <form class="notify-row" id="notify-form" novalidate>
-              <input
-                type="email"
-                id="notify-email"
-                name="email"
-                placeholder="your@organisation.com"
-                required
-                autocomplete="email"
-                aria-label="Email address for framework publication notifications"
-              />
-              <button type="submit" class="btn-primary">Notify me</button>
-            </form>
-            <p id="notify-feedback" style="font-size: 0.82rem; color: var(--color-accent-cyan); margin-top: var(--space-1); display: none;" aria-live="polite">
-              Noted — we'll reach out when new frameworks are published.
-            </p>
-          </div>
+
 
         </div>
       </section>
@@ -1601,25 +1584,12 @@
           });
         }
 
-        // ── Notify Form ───────────────────────────────────────────
-        const notifyForm = document.getElementById('notify-form');
-        const notifyFeedback = document.getElementById('notify-feedback');
-
-        if (notifyForm) {
-          notifyForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            notifyForm.style.display = 'none';
-            notifyFeedback.style.display = 'block';
-          });
-        }
-
-        // ── Dev card notify buttons → focus notify input ──────────
+        // ── Dev card notify buttons → scroll to contact ──────────
         document.querySelectorAll('[data-notify-focus]').forEach((btn) => {
           btn.addEventListener('click', () => {
-            const notifyEmail = document.getElementById('notify-email');
-            if (notifyEmail) {
-              notifyEmail.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              setTimeout(() => notifyEmail.focus(), 400);
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
           });
         });
