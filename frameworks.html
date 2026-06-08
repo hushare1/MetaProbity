@@ -855,12 +855,8 @@
             <p>
               These frameworks emerged directly from building two real systems and researching the enterprise governance gap. They are not prescriptive standards — they are structured thinking tools, grounded in practice, versioned and evolving.
             </p>
-            <p class="hero-support" style="margin-top: var(--space-2);">
-              Freely available at overview level. Practitioner packs — source files, annotated PDFs, and implementation guides — available on request.
-            </p>
             <div class="btn-row" style="margin-top: var(--space-3);">
               <a class="btn-primary" href="#framework-01">Explore the frameworks</a>
-              <a class="btn-secondary" href="#practitioner-pack">Get the practitioner pack</a>
             </div>
           </div>
         </div>
@@ -1141,83 +1137,7 @@
       </section>
 
       <!-- ═══════════════════════════════════════════════════════════
-           SECTION 8 — PRACTITIONER PACK GATE
-      ══════════════════════════════════════════════════════════════ -->
-      <section id="practitioner-pack" class="practitioner-gate" aria-labelledby="gate-heading">
-        <div class="container">
-
-          <div class="section-intro reveal">
-            <span class="eyebrow">Go deeper</span>
-            <h2 id="gate-heading">Get the practitioner pack.</h2>
-            <p>One registration gives you access to the full practitioner materials for all five frameworks. We may follow up personally — not with automated email.</p>
-          </div>
-
-          <div class="gate-card reveal">
-            <!-- Left: value proposition -->
-            <div>
-              <p class="fw-column-label" style="margin-bottom: var(--space-2);">Included in the practitioner pack</p>
-              <ul class="gate-included-list">
-                <li>
-                  <span class="gate-check">✓</span>
-                  <span><strong style="color: var(--color-text-primary);">Source files</strong> — draw.io XML files for all published frameworks, importable and adaptable for your own context</span>
-                </li>
-                <li>
-                  <span class="gate-check">✓</span>
-                  <span><strong style="color: var(--color-text-primary);">Print-ready PDFs</strong> — A3 branded exports of each framework, formatted for team presentations and workshops</span>
-                </li>
-                <li>
-                  <span class="gate-check">✓</span>
-                  <span><strong style="color: var(--color-text-primary);">"How to use" guides</strong> — Implementation notes for each framework, covering how to apply it to your operating context</span>
-                </li>
-                <li>
-                  <span class="gate-check">✓</span>
-                  <span><strong style="color: var(--color-text-primary);">Early access</strong> — First notification when new frameworks are published, including the four in active development</span>
-                </li>
-              </ul>
-              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: var(--space-3); font-style: italic;">
-                These frameworks are sector-agnostic. They emerged from power systems research but are applicable to financial services, healthcare, government, manufacturing, and any other enterprise operating with AI.
-              </p>
-            </div>
-
-            <!-- Right: form -->
-            <div>
-              <div id="gate-form-wrap">
-                <form class="gate-form" id="gate-form" novalidate>
-                  <div class="gate-form-field">
-                    <label for="gate-name">Your name</label>
-                    <input type="text" id="gate-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
-                  </div>
-                  <div class="gate-form-field">
-                    <label for="gate-email">Work email</label>
-                    <input type="email" id="gate-email" name="email" placeholder="jane@organisation.com" required autocomplete="email" />
-                  </div>
-                  <div class="gate-form-field">
-                    <label for="gate-org">Organisation</label>
-                    <input type="text" id="gate-org" name="organisation" placeholder="Organisation name" required autocomplete="organization" />
-                  </div>
-                  <button type="submit" class="btn-primary" style="width: 100%; margin-top: var(--space-1);">
-                    Download practitioner pack →
-                  </button>
-                  <p class="gate-reassurance">No spam. We may follow up personally to discuss your context. Your data is used only for this purpose.</p>
-
-                  <div class="gate-or-divider">
-                    <span>or</span>
-                  </div>
-                  <a class="btn-secondary" href="#contact" style="text-align: center;">Discuss applying this to your organisation →</a>
-                </form>
-
-                <div class="gate-success" id="gate-success" aria-live="polite">
-                  <h4>Thank you — we'll be in touch.</h4>
-                  <p>Your practitioner pack request has been received. We'll send the materials and may follow up personally within 24 hours.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════════════════════════
-           SECTION 9 — FRAMEWORKS IN DEVELOPMENT
+           SECTION 8 — FRAMEWORKS IN DEVELOPMENT
       ══════════════════════════════════════════════════════════════ -->
       <section aria-labelledby="dev-heading">
         <div class="container">
@@ -1418,7 +1338,7 @@
         <div>
           <h3>Get in touch</h3>
           <p class="footer-note" style="margin-top: var(--space-1);">
-            For enquiries, advisory discussions, or to request the practitioner pack for the frameworks.
+            For enquiries, advisory discussions, or to collaborate on our research.
           </p>
           <a class="contact-email" href="mailto:contact@metaprobity.com">contact@metaprobity.com</a>
           <p class="footer-note" style="margin-top: var(--space-2);">We respond personally. No automated replies.</p>
@@ -1529,42 +1449,6 @@
           if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
         });
 
-        // ── Practitioner Pack Form ────────────────────────────────
-        const gateForm = document.getElementById('gate-form');
-        const gateSuccess = document.getElementById('gate-success');
-
-        if (gateForm) {
-          gateForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const data = new FormData(gateForm);
-            const submitBtn = gateForm.querySelector('[type="submit"]');
-            submitBtn.textContent = 'Sending…';
-            submitBtn.disabled = true;
-
-            try {
-              // Replace YOUR_FORM_ID with your Formspree form ID
-              // e.g. https://formspree.io/f/xdkngpzq
-              const resp = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: { Accept: 'application/json' },
-                body: data,
-              });
-
-              if (resp.ok) {
-                gateForm.style.display = 'none';
-                gateSuccess.style.display = 'block';
-              } else {
-                submitBtn.textContent = 'Try again';
-                submitBtn.disabled = false;
-                alert('Something went wrong — please email us directly at contact@metaprobity.com');
-              }
-            } catch {
-              // Fallback: show success state and note for manual follow-up
-              gateForm.style.display = 'none';
-              gateSuccess.style.display = 'block';
-            }
-          });
-        }
       })();
     </script>
   </body>
