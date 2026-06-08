@@ -874,7 +874,7 @@
           <div class="section-intro reveal">
             <span class="eyebrow">How they relate</span>
             <h2 id="map-heading">From principles to implementation — one coherent system.</h2>
-            <p>Five frameworks that answer five distinct questions. Together they form a continuous path from governance obligation to working AI system.</p>
+            <p>Three frameworks are published. Frameworks 04 and 05 are in active development, completing the full path from governance obligation to working AI system.</p>
           </div>
 
           <div class="flow-map reveal">
@@ -898,14 +898,14 @@
               </a>
             </div>
             <div class="flow-row" style="padding-left: 0;">
-              <a class="flow-node node-purple" href="#framework-05" aria-label="Go to LLM Integration Patterns">
-                <span class="flow-node-label">Framework 05</span>
+              <a class="flow-node node-purple" href="#dev-heading" aria-label="LLM Integration Patterns — in development">
+                <span class="flow-node-label">Framework 05 · In development</span>
                 <span class="flow-node-title">LLM Integration Patterns</span>
                 <span class="flow-node-q">How to build it?</span>
               </a>
               <span class="flow-arrow" aria-hidden="true">←</span>
-              <a class="flow-node node-cyan" href="#framework-04" aria-label="Go to AI Engineering Disciplines">
-                <span class="flow-node-label">Framework 04</span>
+              <a class="flow-node node-cyan" href="#dev-heading" aria-label="AI Engineering Disciplines — in development">
+                <span class="flow-node-label">Framework 04 · In development</span>
                 <span class="flow-node-title">AI Engineering Disciplines</span>
                 <span class="flow-node-q">What Ops do you need?</span>
               </a>
@@ -915,7 +915,7 @@
           </div>
 
           <div class="flow-narrative reveal">
-            <p>Start with the <strong style="color: var(--color-text-primary);">Hourglass</strong> to understand the governance obligation. Use the <strong style="color: var(--color-text-primary);">Enterprise Framework</strong> to design your operating model. Apply the <strong style="color: var(--color-text-primary);">Guardrail Framework</strong> to make AI safe. Staff it with the right <strong style="color: var(--color-text-primary);">Ops disciplines</strong>. Then use the <strong style="color: var(--color-text-primary);">LLM Integration Patterns</strong> to build.</p>
+            <p>Start with the <strong style="color: var(--color-text-primary);">Hourglass</strong> to understand the governance obligation. Use the <strong style="color: var(--color-text-primary);">Enterprise Framework</strong> to design your operating model. Apply the <strong style="color: var(--color-text-primary);">Guardrail Framework</strong> to make AI safe. <strong style="color: var(--color-text-primary);">Engineering Disciplines</strong> and <strong style="color: var(--color-text-primary);">LLM Integration Patterns</strong> — completing the path — are in active development.</p>
           </div>
         </div>
       </section>
@@ -1108,7 +1108,7 @@
                 </li>
                 <li>
                   <span class="fw-layer-num">5</span>
-                  <span><strong style="color: var(--color-text-primary);">HiTL Calibration Layer</strong> — Human-in-the-loop routing. Tier-calibrated: Tier 0 routes all outputs to human review; Tier 3 routes only low-confidence outputs.</span>
+                  <span><strong style="color: var(--color-text-primary);">HITL Calibration Layer</strong> — Human-in-the-loop routing. Tier-calibrated: Tier 0 routes all outputs to human review; Tier 3 routes only low-confidence outputs.</span>
                 </li>
                 <li>
                   <span class="fw-layer-num">6</span>
@@ -1135,133 +1135,7 @@
             </div>
           </div>
 
-          <p class="fw-connector-note reveal">This framework connects to → AI Engineering Disciplines (Framework 04) — the Guardrail Framework defines what to build; the Engineering Disciplines define who builds and operates it.</p>
-
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════════════════════════
-           SECTION 6 — FRAMEWORK 04: AI ENGINEERING DISCIPLINES
-      ══════════════════════════════════════════════════════════════ -->
-      <section id="framework-04" class="section-alt" aria-labelledby="fw04-heading">
-        <div class="container">
-
-          <div class="fw-meta reveal">
-            <span class="pill pill-operations">Operations</span>
-            <span class="version-badge">v1.0</span>
-            <span class="fw-number">Framework 04</span>
-          </div>
-
-          <div class="reveal">
-            <h2 id="fw04-heading">AI Engineering Discipline Framework</h2>
-          </div>
-
-          <div class="pull-quote reveal" style="margin-top: var(--space-3); max-width: 860px;">
-            "MLOps is the foundation — but no longer sufficient on its own."
-          </div>
-
-          <div class="fw-two-col reveal">
-            <div>
-              <p class="fw-column-label">What this framework answers</p>
-              <p class="fw-column-question">What engineering disciplines does an enterprise need to build, deploy, and operate AI systems responsibly at scale?</p>
-              <p style="margin-top: var(--space-2);">The AI Engineering Discipline Framework maps the full XOps stack required to run AI in an enterprise. From data engineering foundations through to the emerging disciplines of AgentOps and PromptOps, it shows that modern AI requires a layered set of operational capabilities — not just a data science team and a deployment pipeline.</p>
-              <p style="margin-top: var(--space-2);">Thirteen disciplines are organised across three horizontal rows: the data and model foundation layer, the LLM and agent layer, and the eight cross-cutting disciplines that are relevant at every stage. This framework answers the staffing and capability question that the Enterprise Framework's operating model implies but does not resolve.</p>
-            </div>
-            <div>
-              <p class="fw-column-label">What it contains</p>
-              <ul class="fw-layer-list">
-                <li>
-                  <span class="fw-layer-num">1</span>
-                  <span><strong style="color: var(--color-text-primary);">Foundation Layer</strong> — DataOps, MLOps, ModelOps: the established disciplines for data pipelines, model training, and model lifecycle management.</span>
-                </li>
-                <li>
-                  <span class="fw-layer-num">2</span>
-                  <span><strong style="color: var(--color-text-primary);">LLM &amp; Agent Layer</strong> — LLMOps and AgentOps: newer disciplines emerging from the specific operational requirements of large language models and autonomous agents.</span>
-                </li>
-                <li>
-                  <span class="fw-layer-num">3</span>
-                  <span><strong style="color: var(--color-text-primary);">8 Cross-Cutting Disciplines</strong> — Including PromptOps, FinOps for AI, AI Security Engineering, Observability, and Responsible AI Engineering — applicable across all operating modes.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Diagram coming soon -->
-          <div class="fw-diagram-placeholder reveal" aria-label="Diagram being finalised">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="6" y="8" width="36" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M6 16h36M16 8v28M32 8v28" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="38" cy="38" r="8" fill="#0f0f1a" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M38 34v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <p style="color: var(--color-text-muted);">Framework diagram v1.0 — being finalised for publication. Available in the practitioner pack.</p>
-          </div>
-
-          <p class="fw-connector-note reveal">This framework connects to → LLM Integration Patterns (Framework 05) — Engineering Disciplines answers "who and how?"; the Integration Patterns answers "what do they build?"</p>
-
-        </div>
-      </section>
-
-      <!-- ═══════════════════════════════════════════════════════════
-           SECTION 7 — FRAMEWORK 05: LLM INTEGRATION PATTERNS
-      ══════════════════════════════════════════════════════════════ -->
-      <section id="framework-05" aria-labelledby="fw05-heading">
-        <div class="container">
-
-          <div class="fw-meta reveal">
-            <span class="pill pill-implementation">Implementation</span>
-            <span class="version-badge">v1.0</span>
-            <span class="fw-number">Framework 05</span>
-          </div>
-
-          <div class="reveal">
-            <h2 id="fw05-heading">LLM Integration Patterns</h2>
-          </div>
-
-          <div class="pull-quote reveal" style="margin-top: var(--space-3); max-width: 860px;">
-            "INPUT GUARDRAIL → PROBABILISTIC AI CORE → OUTPUT GUARDRAIL. This invariant holds across all nine patterns."
-          </div>
-
-          <div class="fw-two-col reveal">
-            <div>
-              <p class="fw-column-label">What this framework answers</p>
-              <p class="fw-column-question">How do you safely embed large language models into existing enterprise systems — and which integration pattern fits which use case?</p>
-              <p style="margin-top: var(--space-2);">The LLM Integration Patterns framework catalogues nine concrete integration patterns organised across three maturity phases: Direct Integration, Augmented Integration, and Agentic Integration. Each pattern describes a specific way of connecting an LLM to enterprise systems, with its own risk profile, governance requirements, and HITL obligations.</p>
-              <p style="margin-top: var(--space-2);">A single invariant runs through all nine patterns: the Guardrail Sandwich from Framework 03. Regardless of pattern complexity, every LLM integration must pass through input validation and output verification. This framework is where the theoretical safety model becomes buildable reality.</p>
-            </div>
-            <div>
-              <p class="fw-column-label">What it contains</p>
-              <ul class="fw-layer-list">
-                <li>
-                  <span class="fw-layer-num">1</span>
-                  <span><strong style="color: var(--color-text-primary);">Phase 1 — Direct Integration</strong> — Three patterns: Simple Prompt/Response, Retrieval-Augmented Generation (RAG), and Structured Output Extraction. The foundation patterns most enterprises encounter first.</span>
-                </li>
-                <li>
-                  <span class="fw-layer-num">2</span>
-                  <span><strong style="color: var(--color-text-primary);">Phase 2 — Augmented Integration</strong> — Three patterns: Tool-Using LLM, Multi-Modal Integration, and Fine-tuned Domain Model. Where LLMs begin to interact with enterprise systems and data.</span>
-                </li>
-                <li>
-                  <span class="fw-layer-num">3</span>
-                  <span><strong style="color: var(--color-text-primary);">Phase 3 — Agentic Integration</strong> — Three patterns: Single Agent, Multi-Agent Orchestration, and Human-in-the-Loop Agent. The highest-autonomy, highest-risk integration patterns.</span>
-                </li>
-                <li>
-                  <span class="fw-layer-num">4</span>
-                  <span><strong style="color: var(--color-text-primary);">Governance layer</strong> — Cross-cutting requirements: the guardrail invariant, audit trail obligations, HITL tier assignment, and rollback procedures — applied consistently across all nine patterns.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Diagram coming soon -->
-          <div class="fw-diagram-placeholder reveal" aria-label="Diagram being finalised">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="6" y="8" width="36" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M6 16h36M6 24h36M16 8v28M32 8v28" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="38" cy="38" r="8" fill="#0f0f1a" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M38 34v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <p style="color: var(--color-text-muted);">Framework diagram v1.0 — being finalised for publication. Available in the practitioner pack.</p>
-          </div>
+          <p class="fw-connector-note reveal">This framework connects to → AI Engineering Disciplines (Framework 04) and LLM Integration Patterns (Framework 05) — both in active development, completing the path from safety model to buildable implementation.</p>
 
         </div>
       </section>
@@ -1351,10 +1225,30 @@
           <div class="section-intro reveal">
             <span class="eyebrow">Active research</span>
             <h2 id="dev-heading">Frameworks in development.</h2>
-            <p>The research programme is ongoing. Four further frameworks are in active development, each addressing a gap in the existing set identified through the research.</p>
+            <p>The research programme is ongoing. Six frameworks are in active development — including Frameworks 04 and 05 which extend the published set to full implementation, and four further frameworks addressing additional gaps identified through the research.</p>
           </div>
 
           <div class="dev-cards-grid reveal-stagger">
+            <article class="dev-card">
+              <span class="pill pill-dev">In development</span>
+              <span class="dev-card-number">Framework 04</span>
+              <h4>AI Engineering Discipline Framework</h4>
+              <p>Maps the full XOps stack required to run AI in an enterprise — from DataOps and MLOps foundations through LLMOps and AgentOps, to eight cross-cutting disciplines including PromptOps, FinOps for AI, AI Security Engineering, and Responsible AI Engineering.</p>
+              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 04">
+                Notify me when available →
+              </button>
+            </article>
+
+            <article class="dev-card">
+              <span class="pill pill-dev">In development</span>
+              <span class="dev-card-number">Framework 05</span>
+              <h4>LLM Integration Patterns</h4>
+              <p>Nine concrete integration patterns across three maturity phases — Direct, Augmented, and Agentic Integration — each with its own risk profile, governance requirements, and HiTL obligations. The Guardrail Sandwich invariant from Framework 03 applies across all nine patterns.</p>
+              <button class="dev-card-link" data-notify-focus aria-label="Register interest in Framework 05">
+                Notify me when available →
+              </button>
+            </article>
+
             <article class="dev-card">
               <span class="pill pill-dev">In development</span>
               <span class="dev-card-number">Framework 06</span>
