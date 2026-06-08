@@ -2,22 +2,46 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity var(--transition-slow), transform var(--transition-slow);
+  /* Multiple animation layers to guarantee visibility */
+  animation: reveal-safety-immediate 0.001s ease forwards 0ms, reveal-safety 0.3s ease forwards 100ms;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+  animation: none;
+}
+
+/* Immediate safety: ensures opacity 1 within 50ms as fallback */
+@keyframes reveal-safety-immediate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Primary safety animation with very short delay */
+@keyframes reveal-safety {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .reveal-stagger > * {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity var(--transition-slow), transform var(--transition-slow);
+  /* Multiple animation layers to guarantee visibility */
+  animation: reveal-safety-immediate 0.001s ease forwards 0ms, reveal-safety 0.3s ease forwards 150ms;
 }
 
 .reveal-stagger > *.is-visible {
   opacity: 1;
   transform: translateY(0);
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

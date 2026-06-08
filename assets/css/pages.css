@@ -12,6 +12,7 @@
   opacity: 0.1;
   pointer-events: none;
   animation: drift-wave 20s linear infinite;
+  z-index: 0;
 }
 
 .hero-wave svg {
