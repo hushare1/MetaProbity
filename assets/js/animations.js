@@ -79,16 +79,24 @@
 
   // Fallback: Ensure reveal elements are visible after a delay in case calculations failed
   // Use multiple timeouts to catch edge cases with slow DOM rendering or network delays
-  const ensureVisibility = () => {
+  const ensureVisibility = (useInlineStyle = false) => {
     revealItems.forEach((el) => {
       if (!el.classList.contains('is-visible')) {
         el.classList.add('is-visible');
+        if (useInlineStyle) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
       }
     });
     staggerGroups.forEach((group) => {
       [...group.children].forEach((child) => {
         if (!child.classList.contains('is-visible')) {
           child.classList.add('is-visible');
+          if (useInlineStyle) {
+            child.style.opacity = '1';
+            child.style.transform = 'translateY(0)';
+          }
         }
       });
     });
@@ -96,35 +104,42 @@
       strip.querySelectorAll('.stage-node').forEach((node) => {
         if (!node.classList.contains('is-visible')) {
           node.classList.add('is-visible');
+          if (useInlineStyle) {
+            node.style.opacity = '1';
+            node.style.transform = 'translateY(0)';
+          }
         }
       });
     });
   };
 
-  // Immediate fallback for safety
-  setTimeout(ensureVisibility, 0);
+  // Immediate fallback for safety (no inline styles yet, let CSS handle it)
+  setTimeout(() => ensureVisibility(false), 0);
 
-  // Primary fallback: 100ms (quick catch for slow DOM rendering)
-  setTimeout(ensureVisibility, 100);
+  // Primary fallback: 50ms (very quick catch for slow DOM rendering)
+  setTimeout(() => ensureVisibility(false), 50);
 
-  // Secondary fallback: 300ms
-  setTimeout(ensureVisibility, 300);
+  // Secondary fallback: 100ms with inline styles as emergency measure
+  setTimeout(() => ensureVisibility(true), 100);
 
-  // Tertiary fallback: 1000ms (catches very slow network scenarios)
-  setTimeout(ensureVisibility, 1000);
+  // Tertiary fallback: 300ms
+  setTimeout(() => ensureVisibility(true), 300);
 
-  // Quaternary fallback: Ensure visibility on page load
+  // Quaternary fallback: 1000ms (catches very slow network scenarios)
+  setTimeout(() => ensureVisibility(true), 1000);
+
+  // Quinary fallback: Ensure visibility on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(ensureVisibility, 50);
+      setTimeout(() => ensureVisibility(true), 50);
     });
   } else {
     // Page already loaded, ensure visibility now
-    setTimeout(ensureVisibility, 50);
+    setTimeout(() => ensureVisibility(true), 50);
   }
 
   // Final safety net: ensure visibility after all other events
   window.addEventListener('load', () => {
-    setTimeout(ensureVisibility, 100);
+    setTimeout(() => ensureVisibility(true), 100);
   });
 })();
